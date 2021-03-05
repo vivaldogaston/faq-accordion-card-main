@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>Frontend Mentor | FAQ Accordion Card</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  
+  <div class="container"><img src="images/illustration-box-desktop.svg" height="150" class="img3"> 
+    <div class="imgs">
+      <img src="images/bg-pattern-desktop.svg" height="600" class="img1">
+      <img src="images/illustration-woman-online-desktop.svg" height="300" class="img2"> 
+      
+    </div>
+    <div class="questions">
+      <h1><b>FAQ</b></h1>
+      <div class="question" onclick="ShowHide(0)">
+        <p>How many team members can I invite? <span><img src="images/icon-arrow-down.svg"></span></p>
+        <div class="answer">
+          <p>You can invite up to 2 additional users on the Free plan. There is no limit on 
+            team members for the Premium plan.</p>      
+        </div>
+      </div>
+      <div class="question" onclick="ShowHide(1)" >
+        <p>What is the maximum file upload size? <span><img src="images/icon-arrow-down.svg"></span></p> 
+        <div class="answer">
+          <p>No more than 2GB. All files in your account must fit your allotted storage space.</p>      
+        </div>
+      </div>
+      <div class="question" onclick="ShowHide(2)" >
+        <p>How do I reset my password? <span><img src="images/icon-arrow-down.svg"></span></p>
+        <div class="answer">
+          <p>Click “Forgot password” from the login page or “Change password” from your profile page.
+            A reset link will be emailed to you.</p>      
+        </div>
+      </div>
+      <div class="question" onclick="ShowHide(3)" >
+        <p>Can I cancel my subscription? <span><img src="images/icon-arrow-down.svg"></span></p>
+        <div class="answer">
+          <p>Yes! Send us a message and we’ll process your request no questions asked.</p>      
+        </div>
+      </div>
+      <div class="question" onclick="ShowHide(4)" >
+        <p>Do you provide additional support? <span><img src="images/icon-arrow-down.svg"></span></p>
+        <div class="answer">
+          <p>Chat and email support is available 24/7. Phone lines are open during normal business hours</p>      
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://vivaldogaston.netlify.app">Vivaldo Gaston</a>.
+  </div>
+<script>
+      function ShowHide(question){
+        
+        var count=document.getElementsByClassName("questions")[0].childElementCount-1;
+        console.log(event.target.className);
+        function showAnswer(){
+          if(document.getElementsByClassName("question")[question].children[1].style.display=="block")
+          {
+            document.getElementsByClassName("question")[question].children[1].style.display="none";
+            document.getElementsByClassName("question")[question].children[0].style.fontWeight=400;
+            document.getElementsByClassName("question")[question].children[0].children[0].children[0].className="";
+          }
+          else{
+            for(var i=0;i<count;i++){
+              document.getElementsByClassName("question")[i].children[0].style.fontWeight=400;
+              document.getElementsByClassName("question")[i].children[1].style.display="none";
+              document.getElementsByClassName("question")[i].children[0].children[0].children[0].className="";
+            }
+            document.getElementsByClassName("question")[question].children[1].style.display="block";
+            document.getElementsByClassName("question")[question].children[0].style.fontWeight=700;
+            document.getElementsByClassName("question")[question].children[0].children[0].children[0].className="transform";
+          }
+        }
+        switch (question) {
+          case 0:
+            showAnswer();
+            break;
+                  case 1:
+                    showAnswer();
+                    break;
+                          case 2:
+                            showAnswer();
+                            break;
+                                case 3:
+                                  showAnswer();
+                                  break;
+                                        case 4:
+                                          showAnswer();
+                                          break;
+                                                default:
+                                                  break;
+        }
+      }
+</script>
+</body>
+</html>
